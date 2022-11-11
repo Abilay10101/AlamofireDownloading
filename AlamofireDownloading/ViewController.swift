@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         
         AF.download(url)
             
+            .validate()
+            
             .downloadProgress { progress in
                 self.completedLabel.text = progress.localizedDescription
                 self.progressView.setProgress(Float(progress.fractionCompleted), animated: true)
@@ -42,8 +44,9 @@ class ViewController: UIViewController {
                 self.indicator.isHidden = true
                 
                 self.progressView.isHidden = true
-                
-                
+            }
+            else {
+                    print("Ошибка")
             }
         }
     }
