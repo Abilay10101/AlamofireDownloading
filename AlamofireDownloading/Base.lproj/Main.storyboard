@@ -1,24 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AlamofireDownloading" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOy-1Z-jx6">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bm5-V0-1NZ">
+                                <rect key="frame" x="197" y="810" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh3-M8-Pil">
+                                <rect key="frame" x="20" y="768" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f2r-yX-eki">
+                                <rect key="frame" x="20" y="732" width="374" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="psZ-Ep-nZU"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LOy-1Z-jx6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3bI-bK-8cX"/>
+                            <constraint firstItem="Jh3-M8-Pil" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="97j-MJ-6QL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jh3-M8-Pil" secondAttribute="trailing" constant="20" id="EW4-hO-KwF"/>
+                            <constraint firstItem="bm5-V0-1NZ" firstAttribute="top" secondItem="Jh3-M8-Pil" secondAttribute="bottom" constant="21" id="FcW-x2-gfT"/>
+                            <constraint firstItem="bm5-V0-1NZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qtl-Cb-EQv"/>
+                            <constraint firstItem="LOy-1Z-jx6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="asM-fx-Ouj"/>
+                            <constraint firstItem="LOy-1Z-jx6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="eY2-Hz-Nja"/>
+                            <constraint firstItem="Jh3-M8-Pil" firstAttribute="top" secondItem="f2r-yX-eki" secondAttribute="bottom" constant="32" id="k0u-8W-pio"/>
+                            <constraint firstItem="f2r-yX-eki" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qeR-5P-uKt"/>
+                            <constraint firstItem="LOy-1Z-jx6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="v1Z-3G-oYh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bm5-V0-1NZ" secondAttribute="bottom" constant="32" id="yGi-nc-D0p"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="completedLabel" destination="Jh3-M8-Pil" id="JVe-Cn-ldI"/>
+                        <outlet property="imageView" destination="LOy-1Z-jx6" id="URm-lM-uEt"/>
+                        <outlet property="indicator" destination="bm5-V0-1NZ" id="dyq-Yt-MPy"/>
+                        <outlet property="progressView" destination="f2r-yX-eki" id="9Bc-R8-qCH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="97.767857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
